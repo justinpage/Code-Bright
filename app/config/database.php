@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'CodeBright',
 			'username'  => 'root',
-			'password'  => 'battosai',
+			'password'  => 'klvtz',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
