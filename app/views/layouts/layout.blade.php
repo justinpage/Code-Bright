@@ -7,11 +7,6 @@
 </head>
 <body>
 	<div class='container'>
-	    <nav role='navigation' class='navbar navbar-default'>
-	        <div class='navbar-header'>
-				<a href="{{ action('games.index') }}" class="navbar-brand"></a>
-			</div>
-	    </nav>
 		@yield('content')
 	</div>
 </body>
