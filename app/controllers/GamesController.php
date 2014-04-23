@@ -37,7 +37,7 @@ class GamesController extends BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		
+
 		if ( !$this->game->fill($input)->isValid() )
 		{
 			return Redirect::back()->withInput()->withErrors($this->game->errors);
@@ -85,6 +85,10 @@ class GamesController extends BaseController {
 		$currentGame->title = Input::get('title');
 		$currentGame->publisher = Input::get('publisher');
 		$currentGame->complete = Input::has('complete');
+
+		if(!$currentGame->isValid(true)) {
+			return Redirect::back()->withInput()->withErrors($currentGame->errors);
+		}
 		$currentGame->save();
 
 		return Redirect::action('games.index');

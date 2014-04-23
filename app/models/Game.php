@@ -20,7 +20,7 @@ class Game extends Eloquent {
 
 	public function isValid($update = false)
 	{
-		$currentRules = (empty($update)) ? static::$rules : static::$updateRules;
+		$currentRules = (!$update) ? static::$rules : static::$updateRules;
 		$validation = Validator::make($this->attributes, $currentRules);
 
 		if ($validation->passes()) return true;
